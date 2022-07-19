@@ -1,0 +1,21 @@
+<!-- <p>add-to-cart works!</p> -->
+<select
+  [(ngModel)]="countProducts"
+  name="countProducts"
+  id="countProducts"
+  class="select-input form-control"
+  id="exampleFormControlSelect1"
+  (ngModelChange)="selectChange($event)"
+>
+  <option selected disabled hidden value="null">Please select</option>
+  <option *ngFor="let item of selectList" [value]="item.value">
+    {{ item.value }}
+  </option>
+</select>
+<br />
+<button
+  class="btn-width btn btn-primary"
+  [attr.disabled]="enableAddToCart ? null : 'true'"
+>
+  Add to cart
+</button>

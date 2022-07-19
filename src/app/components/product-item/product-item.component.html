@@ -8,8 +8,8 @@
     <p>
       <strong>${{ product.price }}</strong>
     </p>
-
-    <select
+    <app-add-to-cart></app-add-to-cart>
+    <!-- <select
       [(ngModel)]="countProducts"
       name="countProducts"
       id="countProducts"
@@ -28,6 +28,6 @@
       [attr.disabled]="enableAddToCart ? null : 'true'"
     >
       Add to cart
-    </button>
+    </button> -->
   </div>
 </form>
