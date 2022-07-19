@@ -1,0 +1,33 @@
+<form class="product-list-form">
+  <div class="form-group product-container">
+    <img class="product-image" src="{{ product.url }}" alt="" />
+
+    <p>
+      <strong>{{ product.name }}</strong>
+    </p>
+    <p>
+      <strong>${{ product.price }}</strong>
+    </p>
+
+    <select
+      [(ngModel)]="countProducts"
+      name="countProducts"
+      id="countProducts"
+      class="select-input form-control"
+      id="exampleFormControlSelect1"
+      (ngModelChange)="selectChange($event)"
+    >
+      <option selected disabled hidden value="null">Please select</option>
+      <option *ngFor="let item of selectList" [value]="item.value">
+        {{ item.value }}
+      </option>
+    </select>
+    <br />
+    <button
+      class="btn-width btn btn-primary"
+      [attr.disabled]="enableAddToCart ? null : 'true'"
+    >
+      Add to cart
+    </button>
+  </div>
+</form>
